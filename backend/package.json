@@ -14,8 +14,9 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@prisma/client": "^6.19.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
-    "prisma": "^7.0.0"
+    "prisma": "^6.19.0"
   }
 }
