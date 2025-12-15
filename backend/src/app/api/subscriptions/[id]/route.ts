@@ -1,42 +1,57 @@
 import { prisma } from "@/lib/prisma"
-import { success, error } from "@/lib/response"
+import {
+  ok,
+  accepted,
+  notFound,
+  serverError,
+} from "@/lib/response"
 
 type Params = {
   params: { id: string }
 }
 
 export async function GET(_: Request, { params }: Params) {
-  const id = Number(params.id)
+  try {
+    const id = Number(params.id)
 
-  const data = await prisma.subscription.findUnique({
-    where: { id },
-  })
+    const data = await prisma.subscription.findUnique({
+      where: { id },
+    })
 
-  if (!data) {
-    return error("Subscription tidak ditemukan", 404)
+    if (!data) return notFound("Subscription tidak ditemukan")
+
+    return ok(data)
+  } catch {
+    return serverError()
   }
-
-  return success(data)
 }
 
 export async function PUT(req: Request, { params }: Params) {
-  const id = Number(params.id)
-  const body = await req.json()
+  try {
+    const id = Number(params.id)
+    const body = await req.json()
 
-  const updated = await prisma.subscription.update({
-    where: { id },
-    data: body,
-  })
+    const updated = await prisma.subscription.update({
+      where: { id },
+      data: body,
+    })
 
-  return success(updated)
+    return accepted(updated)
+  } catch {
+    return serverError()
+  }
 }
 
 export async function DELETE(_: Request, { params }: Params) {
-  const id = Number(params.id)
+  try {
+    const id = Number(params.id)
 
-  await prisma.subscription.delete({
-    where: { id },
-  })
+    await prisma.subscription.delete({
+      where: { id },
+    })
 
-  return success({ message: "Subscription berhasil dihapus" })
+    return accepted({ message: "Subscription deleted" })
+  } catch {
+    return serverError()
+  }
 }
