@@ -1,22 +1,24 @@
 import { prisma } from "@/lib/prisma"
-import { success } from "@/lib/response"
+import { ok, serverError } from "@/lib/response"
 
 export async function GET() {
-  const today = new Date()
-  const next7Days = new Date()
-  next7Days.setDate(today.getDate() + 7)
+  try {
+    const today = new Date()
+    const next7Days = new Date()
+    next7Days.setDate(today.getDate() + 7)
 
-  const reminders = await prisma.subscription.findMany({
-    where: {
-      nextPayment: {
-        gte: today,
-        lte: next7Days,
+    const reminders = await prisma.subscription.findMany({
+      where: {
+        nextPayment: {
+          gte: today,
+          lte: next7Days,
+        },
       },
-    },
-    orderBy: {
-      nextPayment: "asc",
-    },
-  })
+      orderBy: { nextPayment: "asc" },
+    })
 
-  return success(reminders)
+    return ok(reminders)
+  } catch {
+    return serverError()
+  }
 }
