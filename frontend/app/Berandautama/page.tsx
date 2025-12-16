@@ -28,7 +28,7 @@ export default function HomePage() {
             aman, dan terintegrasi.
           </p>
           <div className="hero-buttons">
-            <button className="primary-btn">Mulai Sekarang</button>
+            <button className="primary-btn">LOGIN</button>
            
           </div>
         </div>
