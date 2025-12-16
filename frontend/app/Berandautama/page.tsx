@@ -118,6 +118,15 @@ export default function HomePage() {
 .primary-btn:hover {
           background: #0ea5e9;
         }
+.secondary-btn {
+          padding: 14px 28px;
+          background: transparent;
+          border: 1px solid #94a3b8;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          color: #e5e7eb;
+        }
 
 
 
