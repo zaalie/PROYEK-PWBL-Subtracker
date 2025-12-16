@@ -90,4 +90,11 @@ export default function HomePage() {
 .hero-content {
           max-width: 600px;
         }
+.hero h1 {
+          font-size: 48px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+
 
