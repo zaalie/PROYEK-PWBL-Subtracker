@@ -23,3 +23,7 @@ export default function HomePage() {
             <br />
             Langganan Digital
           </h1>
+          <p>
+            Kelola semua tagihan langganan Anda dalam satu platform modern,
+            aman, dan terintegrasi RESTful API.
+          </p>
