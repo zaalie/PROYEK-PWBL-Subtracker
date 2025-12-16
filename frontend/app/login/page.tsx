@@ -24,7 +24,7 @@ export default function LoginPage() {
     <>
       {/* CARD LOGIN LANGSUNG */}
       <div className="login-card">
-        <h2>subtracker</h2>
+        <h2>Subtracker</h2>
         <p className="subtitle">
           Login untuk mengelola langganan digital Anda
         </p>
@@ -44,13 +44,13 @@ export default function LoginPage() {
             <label></label>
             <input
               type="password"
-              placeholder="masukan password"
+              placeholder="Masukan password"
               value={password}
               onChange={(e) => (e.target.value)}
             />
           </div>
 
-          <button type="submit"></button>
+          <button type="Submit">Login</button>
         </form>
       </div>
 
