@@ -26,7 +26,7 @@ export default function LoginPage() {
       <div className="login-card">
         <h2>subtracker</h2>
         <p className="subtitle">
-          
+          Login untuk mengelola langganan digital Anda
         </p>
 
         <form onSubmit={handleLogin}>
