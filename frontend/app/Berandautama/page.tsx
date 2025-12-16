@@ -77,4 +77,14 @@ export default function HomePage() {
           display: flex;
           align-items: center;
           padding-left: 80px;
+/* FOTO BACKGROUND */
+          background-image: linear-gradient(
+              rgba(2, 6, 23, 0.75),
+              rgba(2, 6, 23, 0.75)
+            ),
+            url("https://images.unsplash.com/photo-1553877522-43269d4ea984");
+
+          background-size: cover;
+          background-position: center;
+        }
 
