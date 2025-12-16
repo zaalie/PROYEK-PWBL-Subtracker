@@ -40,4 +40,16 @@ export default function HomePage() {
           font-family: "Segoe UI", Arial, sans-serif;
           color: white;
         }
+/* NAVBAR */
+        .navbar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 25px 60px;
+          z-index: 10;
+        }
 
