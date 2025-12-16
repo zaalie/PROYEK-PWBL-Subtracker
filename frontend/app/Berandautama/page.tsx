@@ -27,3 +27,9 @@ export default function HomePage() {
             Kelola semua tagihan langganan Anda dalam satu platform modern,
             aman, dan terintegrasi RESTful API.
           </p>
+<div className="hero-buttons">
+            <button className="primary-btn">Mulai Sekarang</button>
+            <button className="secondary-btn">Pelajari Lebih Lanjut</button>
+          </div>
+        </div>
+      </section>
