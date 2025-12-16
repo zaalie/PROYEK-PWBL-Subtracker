@@ -10,15 +10,15 @@ export default function HomePage() {
       {/* NAVBAR */}
       <nav className="navbar">
         <h2 className="logo">SubTracker</h2>
-        <button className="login-btn" onClick={() => router.push("/login")}>
-          Login
+        <button className="" onClick={() => router.push("/")}>
+         
         </button>
       </nav>
 
-{/* HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-content"></div>
-        <h1>
+        <div className="hero-content">
+          <h1>
             Manajemen & Pengingat
             <br />
             Langganan Digital
@@ -27,20 +27,22 @@ export default function HomePage() {
             Kelola semua tagihan langganan Anda dalam satu platform modern,
             aman, dan terintegrasi RESTful API.
           </p>
-<div className="hero-buttons">
+          <div className="hero-buttons">
             <button className="primary-btn">Mulai Sekarang</button>
             <button className="secondary-btn">Pelajari Lebih Lanjut</button>
           </div>
         </div>
       </section>
-{/* CSS LANGSUNG DI FILE */}
+
+      {/* CSS LANGSUNG DI FILE */}
       <style jsx global>{`
         body {
           margin: 0;
           font-family: "Segoe UI", Arial, sans-serif;
           color: white;
         }
-/* NAVBAR */
+
+        /* NAVBAR */
         .navbar {
           position: absolute;
           top: 0;
@@ -52,12 +54,14 @@ export default function HomePage() {
           padding: 25px 60px;
           z-index: 10;
         }
-.logo {
+
+        .logo {
           font-size: 22px;
           font-weight: 700;
           letter-spacing: 1px;
         }
-.login-btn {
+
+        .login-btn {
           padding: 10px 26px;
           background: transparent;
           color: #38bdf8;
@@ -67,45 +71,50 @@ export default function HomePage() {
           cursor: pointer;
           transition: all 0.3s ease;
         }
-.login-btn:hover {
+
+        .login-btn:hover {
           background: #38bdf8;
           color: #020617;
         }
-/* HERO */
+
+        /* HERO */
         .hero {
           height: 100vh;
           display: flex;
           align-items: center;
           padding-left: 80px;
-/* FOTO BACKGROUND */
           background-image: linear-gradient(
               rgba(2, 6, 23, 0.75),
               rgba(2, 6, 23, 0.75)
             ),
             url("https://images.unsplash.com/photo-1553877522-43269d4ea984");
-
           background-size: cover;
           background-position: center;
         }
-.hero-content {
+
+        .hero-content {
           max-width: 600px;
         }
-.hero h1 {
+
+        .hero h1 {
           font-size: 48px;
           font-weight: 800;
           margin-bottom: 20px;
           line-height: 1.2;
         }
-.hero p {
+
+        .hero p {
           font-size: 18px;
           color: #cbd5f5;
           margin-bottom: 35px;
         }
-.hero-buttons {
+
+        .hero-buttons {
           display: flex;
           gap: 15px;
         }
-.primary-btn {
+
+        .primary-btn {
           padding: 14px 28px;
           background: #38bdf8;
           border: none;
@@ -115,10 +124,12 @@ export default function HomePage() {
           cursor: pointer;
           color: #020617;
         }
-.primary-btn:hover {
+
+        .primary-btn:hover {
           background: #0ea5e9;
         }
-.secondary-btn {
+
+        .secondary-btn {
           padding: 14px 28px;
           background: transparent;
           border: 1px solid #94a3b8;
@@ -127,7 +138,8 @@ export default function HomePage() {
           cursor: pointer;
           color: #e5e7eb;
         }
-.secondary-btn:hover {
+
+        .secondary-btn:hover {
           border-color: #38bdf8;
           color: #38bdf8;
         }
@@ -135,6 +147,3 @@ export default function HomePage() {
     </>
   );
 }
-
-
-
