@@ -50,7 +50,7 @@ export default function LoginPage() {
             />
           </div>
 
-          <button type="it"></button>
+          <button type="submit"></button>
         </form>
       </div>
 
