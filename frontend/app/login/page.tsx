@@ -62,7 +62,7 @@ export default function LoginPage() {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: linear-gradient(135deg, #2563eb, #1e40af);
+          background: linear-gradient(#86efac, #86efac, #1e40af);
           font-family: Arial, sans-serif;
         }
 
