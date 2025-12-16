@@ -57,4 +57,14 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 1px;
         }
+.login-btn {
+          padding: 10px 26px;
+          background: transparent;
+          color: #38bdf8;
+          border: 1px solid #38bdf8;
+          border-radius: 8px;
+          font-size: 15px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
 
