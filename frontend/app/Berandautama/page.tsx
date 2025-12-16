@@ -25,7 +25,7 @@ export default function HomePage() {
           </h1>
           <p>
             Kelola semua tagihan langganan Anda dalam satu platform modern,
-            aman, dan terintegrasi RESTful API.
+            aman, dan terintegrasi.
           </p>
           <div className="hero-buttons">
             <button className="primary-btn">Mulai Sekarang</button>
