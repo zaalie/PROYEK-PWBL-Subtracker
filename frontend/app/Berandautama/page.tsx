@@ -96,5 +96,10 @@ export default function HomePage() {
           margin-bottom: 20px;
           line-height: 1.2;
         }
+.hero p {
+          font-size: 18px;
+          color: #cbd5f5;
+          margin-bottom: 35px;
+        }
 
 
