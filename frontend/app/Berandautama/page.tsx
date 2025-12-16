@@ -115,6 +115,9 @@ export default function HomePage() {
           cursor: pointer;
           color: #020617;
         }
+.primary-btn:hover {
+          background: #0ea5e9;
+        }
 
 
 
