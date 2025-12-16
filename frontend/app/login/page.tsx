@@ -24,7 +24,7 @@ export default function LoginPage() {
     <>
       {/* CARD LOGIN LANGSUNG */}
       <div className="login-card">
-        <h2>Subtracker</h2>
+        <h2>SUBTRACKER</h2>
         <p className="subtitle">
           Login untuk mengelola langganan digital Anda
         </p>
