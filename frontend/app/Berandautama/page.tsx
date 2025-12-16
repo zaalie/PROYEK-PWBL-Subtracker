@@ -105,5 +105,16 @@ export default function HomePage() {
           display: flex;
           gap: 15px;
         }
+.primary-btn {
+          padding: 14px 28px;
+          background: #38bdf8;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          color: #020617;
+        }
+
 
 
