@@ -24,7 +24,7 @@ export default function LoginPage() {
     <>
       {/* CARD LOGIN LANGSUNG */}
       <div className="login-card">
-        <h2></h2>
+        <h2>subtracker</h2>
         <p className="subtitle">
           
         </p>
@@ -44,7 +44,7 @@ export default function LoginPage() {
             <label></label>
             <input
               type="password"
-              placeholder=""
+              placeholder="masukan password"
               value={password}
               onChange={(e) => (e.target.value)}
             />
