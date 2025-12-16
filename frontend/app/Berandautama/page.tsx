@@ -52,4 +52,9 @@ export default function HomePage() {
           padding: 25px 60px;
           z-index: 10;
         }
+.logo {
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
 
