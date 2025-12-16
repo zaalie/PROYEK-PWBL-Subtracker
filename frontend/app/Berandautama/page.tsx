@@ -29,7 +29,7 @@ export default function HomePage() {
           </p>
           <div className="hero-buttons">
             <button className="primary-btn">Mulai Sekarang</button>
-            <button className="secondary-btn"></button>
+           
           </div>
         </div>
       </section>
