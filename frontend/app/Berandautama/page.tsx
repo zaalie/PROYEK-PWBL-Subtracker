@@ -18,3 +18,8 @@ export default function HomePage() {
 {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content"></div>
+        <h1>
+            Manajemen & Pengingat
+            <br />
+            Langganan Digital
+          </h1>
