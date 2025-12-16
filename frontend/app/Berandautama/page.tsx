@@ -17,21 +17,21 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-content">
-          <h1>
-            SELAMAT DATANG
-            <br />
-            
-          </h1>
-          <p>
-            Kelola semua tagihan langganan Anda dalam satu platform modern,
-            aman, dan terintegrasi.
-          </p>
-          <div className="hero-buttons">
-            <button className="primary-btn">LOGIN</button>
-           
-          </div>
-        </div>
+       <div className="hero-content">
+  <div className="title-block">
+    <h1>SELAMAT DATANG</h1>
+  </div>
+
+  <p>
+    Kelola semua tagihan langganan Anda dalam satu platform modern,
+    aman, dan terintegrasi.
+  </p>
+
+  <div className="hero-buttons">
+    <button className="primary-btn">LOGIN</button>
+  </div>
+</div>
+
       </section>
 
       {/* CSS LANGSUNG DI FILE */}
@@ -77,11 +77,14 @@ export default function HomePage() {
           color: #020617;
         }
 
-        .hero {
-  height: 100vh;
+     .hero {
+  min-height: 100vh;
+  width: 100%;
+ 
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   background-image: linear-gradient(
       rgba(2, 6, 23, 0.8),
@@ -96,16 +99,32 @@ export default function HomePage() {
 
 
 
-        .hero-content {
-          max-width: 600px;
-        }
 
-        .hero h1 {
-          font-size: 48px;
-          font-weight: 800;
-          margin-bottom: 20px;
-          line-height: 1.2;
-        }
+
+     .hero-content {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title-block h1 {
+  font-size: 100px;  
+  font-weight: 1000;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.hero p {
+  font-size: 30px;
+  color: #cbd5f5;
+  margin-bottom: 50px;
+}
+
+
+        
 
         .hero p {
           font-size: 18px;
@@ -149,6 +168,22 @@ export default function HomePage() {
           border-color: #38bdf8;
           color: #38bdf8;
         }
+
+        .title-block {
+  padding: 24px 48px;
+  
+  
+}
+
+.title-block h1 {
+  font-size: 50px;   
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+
       `}</style>
     </>
   );
