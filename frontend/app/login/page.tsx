@@ -31,7 +31,7 @@ export default function LoginPage() {
 
         <form onSubmit={handleLogin}>
           <div className="input-group">
-            <label></label>
+            <label>Email</label>
             <input
               type="email"
               placeholder="masukan gmail"
