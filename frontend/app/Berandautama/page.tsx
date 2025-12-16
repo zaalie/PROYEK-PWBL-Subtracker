@@ -101,5 +101,9 @@ export default function HomePage() {
           color: #cbd5f5;
           margin-bottom: 35px;
         }
+.hero-buttons {
+          display: flex;
+          gap: 15px;
+        }
 
 
