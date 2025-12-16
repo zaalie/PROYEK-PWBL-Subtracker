@@ -87,4 +87,7 @@ export default function HomePage() {
           background-size: cover;
           background-position: center;
         }
+.hero-content {
+          max-width: 600px;
+        }
 
