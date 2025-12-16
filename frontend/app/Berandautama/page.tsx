@@ -33,3 +33,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+{/* CSS LANGSUNG DI FILE */}
+      <style jsx global>{`
+        body {
+          margin: 0;
+          font-family: "Segoe UI", Arial, sans-serif;
+          color: white;
+        }
+
