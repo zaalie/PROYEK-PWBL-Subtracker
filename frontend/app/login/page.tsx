@@ -41,7 +41,7 @@ export default function LoginPage() {
           </div>
 
           <div className="input-group">
-            <label></label>
+            <label>Password</label>
             <input
               type="password"
               placeholder="Masukan password"
