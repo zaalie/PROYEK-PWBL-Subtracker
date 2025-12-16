@@ -81,18 +81,19 @@ export default function HomePage() {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;   
-  text-align: center;        
+  justify-content: center;
 
   background-image: linear-gradient(
-      rgba(2, 6, 23, 0.75),
-      rgba(2, 6, 23, 0.75)
+      rgba(2, 6, 23, 0.8),
+      rgba(2, 6, 23, 0.8)
     ),
-    url("https://images.unsplash.com/photo-1553877522-43269d4ea984");
+    url("/bg.jpg");
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 
         .hero-content {
