@@ -67,4 +67,8 @@ export default function HomePage() {
           cursor: pointer;
           transition: all 0.3s ease;
         }
+.login-btn:hover {
+          background: #38bdf8;
+          color: #020617;
+        }
 
