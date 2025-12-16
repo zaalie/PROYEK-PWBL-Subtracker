@@ -14,3 +14,7 @@ export default function HomePage() {
           Login
         </button>
       </nav>
+
+{/* HERO SECTION */}
+      <section className="hero">
+        <div className="hero-content"></div>
