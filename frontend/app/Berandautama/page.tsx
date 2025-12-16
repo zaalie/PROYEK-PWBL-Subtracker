@@ -112,10 +112,12 @@ export default function HomePage() {
           margin-bottom: 35px;
         }
 
-        .hero-buttons {
-          display: flex;
-          gap: 15px;
-        }
+       .hero-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 15px;
+}
+
 
         .primary-btn {
           padding: 14px 28px;
