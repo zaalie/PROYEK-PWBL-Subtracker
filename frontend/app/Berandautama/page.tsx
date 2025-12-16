@@ -19,9 +19,9 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-content">
           <h1>
-            Manajemen & Pengingat
+            SELAMAT DATANG
             <br />
-            Langganan Digital
+            
           </h1>
           <p>
             Kelola semua tagihan langganan Anda dalam satu platform modern,
