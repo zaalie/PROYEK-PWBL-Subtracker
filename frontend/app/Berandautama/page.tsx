@@ -77,20 +77,23 @@ export default function HomePage() {
           color: #020617;
         }
 
-        /* HERO */
         .hero {
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          padding-left: 80px;
-          background-image: linear-gradient(
-              rgba(2, 6, 23, 0.75),
-              rgba(2, 6, 23, 0.75)
-            ),
-            url("https://images.unsplash.com/photo-1553877522-43269d4ea984");
-          background-size: cover;
-          background-position: center;
-        }
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+  text-align: center;        
+
+  background-image: linear-gradient(
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1553877522-43269d4ea984");
+
+  background-size: cover;
+  background-position: center;
+}
+
 
         .hero-content {
           max-width: 600px;
