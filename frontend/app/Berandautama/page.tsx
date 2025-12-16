@@ -127,6 +127,14 @@ export default function HomePage() {
           cursor: pointer;
           color: #e5e7eb;
         }
+.secondary-btn:hover {
+          border-color: #38bdf8;
+          color: #38bdf8;
+        }
+      `}</style>
+    </>
+  );
+}
 
 
 
