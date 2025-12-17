@@ -50,5 +50,11 @@ export default function DashboardPage() {
             <h3>⚙️ Pengaturan</h3>
             <p>Kelola akun dan preferensi</p>
           </div>
-
+<div className="card" onClick={() => alert("Fitur API")}>
+            <h3>🔗 REST API</h3>
+            <p>Akses endpoint backend SubTracker</p>
+          </div>
+        </div>
+      </main>
+      
 
