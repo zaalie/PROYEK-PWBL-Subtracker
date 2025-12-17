@@ -7,13 +7,22 @@ export default function HomePage() {
 
   return (
     <>
+
+    
       {/* NAVBAR */}
-      <nav className="navbar">
-        <h2 className="logo">SubTracker</h2>
-        <button className="" onClick={() => router.push("/")}>
-         
-        </button>
-      </nav>
+     <nav className="navbar">
+ 
+
+  {/* KANAN */}
+  <div className="navbar-right">
+    <img
+      src="/logo.png"
+      alt="SubTracker Logo"
+      className="navbar-logo"
+    />
+  </div>
+</nav>
+
 
       {/* HERO SECTION */}
       <section className="hero">
@@ -55,10 +64,13 @@ export default function HomePage() {
           z-index: 10;
         }
 
-        .logo {
-          font-size: 22px;
-          font-weight: 700;
-          letter-spacing: 1px;
+        .logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+
         }
 
         .login-btn {
@@ -95,6 +107,12 @@ export default function HomePage() {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.navbar {
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 
@@ -169,11 +187,11 @@ export default function HomePage() {
           color: #38bdf8;
         }
 
-        .title-block {
-  padding: 24px 48px;
-  
-  
+     .title-block h1 {
+  letter-spacing: 3px;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
+
 
 .title-block h1 {
   font-size: 50px;   
@@ -181,6 +199,54 @@ export default function HomePage() {
   color: #ffffff;
   margin: 0;
 }
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 20px 60px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 9999;
+}
+ .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;          /* ⬅️ KUNCI TINGGI NAVBAR */
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.navbar-right {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* ⬅️ TETAP CENTER */
+}
+
+.navbar-logo {
+  height: 60px;         /* BOLEH DIGEDEIN */
+  width: auto;
+}
+
+
+.navbar-logo {
+  height: 300px;
+  width: auto;
+}
+
+
+
+
 
 
 
