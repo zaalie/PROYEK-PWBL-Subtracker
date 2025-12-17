@@ -129,24 +129,23 @@ export default function LoginPage() {
 
 
 
-       input {
+      input {
   width: 100%;
   padding: 12px 14px;
-
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
-
+  border: 1px solid #e5e7eb;
   font-size: 14px;
-  transition: all 0.3s ease;
+  background: #f8fafc;
+  transition: all 0.25s ease;
 }
 
 input:focus {
   outline: none;
   border-color: #2563eb;
-  background: #ffffff;
+  background: white;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
+
 
 
         label {
@@ -167,9 +166,10 @@ input:focus {
           border-color: #2563eb;
         }
 
-       button {
+     button {
   width: 100%;
   padding: 14px;
+  margin-top: 14px;
 
   background: linear-gradient(135deg, #2563eb, #1e40af);
   color: white;
@@ -178,15 +178,17 @@ input:focus {
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
+
   transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.55);
 }
+
 
 
         button:hover {
