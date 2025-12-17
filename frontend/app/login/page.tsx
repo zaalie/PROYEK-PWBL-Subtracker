@@ -124,9 +124,25 @@ export default function LoginPage() {
 }
 
 
-        .input-group {
-          margin-bottom: 15px;
-        }
+       input {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
 
         label {
           display: block;
