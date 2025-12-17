@@ -98,7 +98,7 @@ export default function LoginPage() {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -108,13 +108,16 @@ export default function LoginPage() {
 
 
 
-        h2 {
+
+      h2 {
   text-align: center;
-  font-size: 26px;
+  font-size: 22px;
   letter-spacing: 2px;
-  color: #1e3a8a;
+  font-weight: 700;
+  color: #1e40af;
   margin-bottom: 6px;
 }
+
 
 
        .subtitle {
