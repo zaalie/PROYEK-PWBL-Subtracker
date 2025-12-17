@@ -103,6 +103,15 @@ export default function DashboardPage() {
           font-weight: 600;
           cursor: pointer;
         }
+.logout-btn:hover {
+          background: #dc2626;
+        }
+
+        /* DASHBOARD */
+        .dashboard {
+          padding: 140px 60px 60px;
+          text-align: center;
+        }
 
 
 
