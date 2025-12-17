@@ -16,6 +16,10 @@ export default function DashboardPage() {
         <div className="navbar-left">
           <h2>SubTracker</h2>
         </div>
-
-
+ <div className="navbar-right">
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+      </nav>
 
