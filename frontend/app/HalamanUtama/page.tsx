@@ -94,6 +94,17 @@ export default function DashboardPage() {
           font-weight: 700;
         }
 
+         .logout-btn {
+          padding: 10px 20px;
+          background: #ef4444;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+
 
 
 
