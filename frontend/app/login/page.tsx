@@ -79,20 +79,21 @@ export default function LoginPage() {
   background-repeat: no-repeat;
 }
 .login-card {
-  width: 400px;
+  width: 420px;
   padding: 40px 35px;
+  border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  border-radius: 20px;
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 
   animation: fadeIn 0.8s ease;
 }
+
 
 @keyframes fadeIn {
   from {
