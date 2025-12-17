@@ -194,11 +194,11 @@ export default function HomePage() {
 
 
 .title-block h1 {
-  font-size: 50px;   
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0;
+  background: linear-gradient(90deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 
 .navbar {
