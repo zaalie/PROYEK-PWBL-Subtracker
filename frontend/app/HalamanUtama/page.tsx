@@ -34,5 +34,8 @@ export default function DashboardPage() {
             <h3>➕ Tambah Langganan</h3>
             <p>Catat layanan baru seperti Netflix, Spotify, Adobe</p>
           </div>
-
+ <div className="card" onClick={() => alert("Fitur Daftar Langganan")}>
+            <h3>📋 Daftar Langganan</h3>
+            <p>Lihat semua langganan aktif Anda</p>
+          </div>
 
