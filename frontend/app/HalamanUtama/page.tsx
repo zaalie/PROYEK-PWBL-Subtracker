@@ -145,6 +145,12 @@ export default function DashboardPage() {
           background: rgba(255, 255, 255, 0.15);
         }
 
+        .card h3 {
+          margin-top: 0;
+          font-size: 20px;
+        }
+
+
 
 
 
