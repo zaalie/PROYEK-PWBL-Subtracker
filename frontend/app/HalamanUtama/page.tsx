@@ -57,4 +57,19 @@ export default function DashboardPage() {
         </div>
       </main>
       
+      {/* CSS */}
+      <style jsx global>{`
+        body {
+          margin: 0;
+          font-family: "Segoe UI", Arial, sans-serif;
+          background: linear-gradient(
+              rgba(2, 6, 23, 0.85),
+              rgba(2, 6, 23, 0.85)
+            ),
+            url("/bg.jpg");
+          background-size: cover;
+          background-position: center;
+          color: white;
+        }
+
 
