@@ -150,6 +150,16 @@ export default function DashboardPage() {
           font-size: 20px;
         }
 
+          .card p {
+          color: #cbd5f5;
+          font-size: 14px;
+        }
+      `}</style>
+    </>
+  );
+}
+
+
 
 
 
