@@ -38,4 +38,9 @@ export default function DashboardPage() {
             <h3>📋 Daftar Langganan</h3>
             <p>Lihat semua langganan aktif Anda</p>
           </div>
+<div className="card" onClick={() => alert("Fitur Pengingat")}>
+            <h3>⏰ Pengingat Tagihan</h3>
+            <p>Notifikasi sebelum jatuh tempo</p>
+          </div>
+
 
