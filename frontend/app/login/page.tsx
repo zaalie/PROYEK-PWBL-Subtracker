@@ -52,13 +52,13 @@ export default function LoginPage() {
             />
           </div>
 
-          <button type="Submit">Login</button>
+        <button type="submit">Login</button>
         </form>
       </div>
 
       {/* CSS LANGSUNG DI page.tsx */}
       <style jsx global>{`
-       body {
+     body  {
   margin: 0;
   height: 100vh;
 
@@ -66,18 +66,18 @@ export default function LoginPage() {
   justify-content: center;
   align-items: center;
 
-  font-family: Arial, sans-serif;
-
-  background-image: linear-gradient(
+  background:
+    linear-gradient(
       rgba(2, 6, 23, 0.75),
       rgba(2, 6, 23, 0.75)
     ),
-    url("/login.png");
+    url("/bg-login.jpg");
 
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
+
 .login-card {
   width: 420px;
   padding: 40px 35px;
@@ -129,21 +129,24 @@ export default function LoginPage() {
 
 
 
-      input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  font-size: 14px;
-  background: #f8fafc;
-  transition: all 0.25s ease;
-}
+      body {
+  margin: 0;
+  height: 100vh;
 
-input:focus {
-  outline: none;
-  border-color: #2563eb;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.75)
+    ),
+    url("/login.png");
+
+  background-size: cover;
+  background-position: center;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 
@@ -166,10 +169,9 @@ input:focus {
           border-color: #2563eb;
         }
 
-     button {
+       button {
   width: 100%;
   padding: 14px;
-  margin-top: 14px;
 
   background: linear-gradient(135deg, #2563eb, #1e40af);
   color: white;
@@ -178,17 +180,15 @@ input:focus {
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
 
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.55);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4)
 }
-
 
 
         button:hover {
