@@ -140,6 +140,13 @@ export default function DashboardPage() {
           backdrop-filter: blur(10px);
         }
 
+        .card:hover {
+          transform: translateY(-8px);
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+
+
 
 
 
