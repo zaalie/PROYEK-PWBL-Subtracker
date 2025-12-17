@@ -130,6 +130,17 @@ export default function DashboardPage() {
           gap: 25px;
         }
 
+        .card {
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 16px;
+          padding: 25px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+        }
+
+
 
 
 
