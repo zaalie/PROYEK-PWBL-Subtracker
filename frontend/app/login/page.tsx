@@ -120,12 +120,13 @@ export default function LoginPage() {
 
 
 
-       .subtitle {
+      .subtitle {
   text-align: center;
   font-size: 14px;
-  color: #64748b;
+  color: #475569;
   margin-bottom: 28px;
 }
+
 
 
        input {
