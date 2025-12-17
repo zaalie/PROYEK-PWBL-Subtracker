@@ -116,12 +116,13 @@ export default function LoginPage() {
 }
 
 
-        .subtitle {
-          text-align: center;
-          font-size: 14px;
-          color: #555;
-          margin-bottom: 25px;
-        }
+       .subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
 
         .input-group {
           margin-bottom: 15px;
