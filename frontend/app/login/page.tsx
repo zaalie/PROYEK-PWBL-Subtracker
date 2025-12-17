@@ -162,17 +162,27 @@ input:focus {
           border-color: #2563eb;
         }
 
-        button {
-          width: 100%;
-          padding: 12px;
-          background-color: #2563eb;
-          color: white;
-          border: none;
-          border-radius: 6px;
-          font-size: 16px;
-          cursor: pointer;
-          margin-top: 10px;
-        }
+       button {
+  width: 100%;
+  padding: 14px;
+
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
 
         button:hover {
           background-color: #1e40af;
