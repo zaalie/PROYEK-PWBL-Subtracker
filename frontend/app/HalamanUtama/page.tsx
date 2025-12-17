@@ -88,5 +88,12 @@ export default function DashboardPage() {
           box-sizing: border-box;
         }
 
+          .navbar h2 {
+          margin: 0;
+          font-size: 22px;
+          font-weight: 700;
+        }
+
+
 
 
