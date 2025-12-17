@@ -36,7 +36,8 @@ export default function LoginPage() {
               type="email"
               placeholder="masukan gmail"
               value={email}
-              onChange={(e) => (e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
+
             />
           </div>
 
@@ -46,7 +47,8 @@ export default function LoginPage() {
               type="password"
               placeholder="Masukan password"
               value={password}
-              onChange={(e) => (e.target.value)}
+             onChange={(e) => setPassword(e.target.value)}
+
             />
           </div>
 
@@ -78,12 +80,15 @@ export default function LoginPage() {
 }
 
         .login-card {
-          width: 380px;
-          background: white;
-          padding: 30px;
-          border-radius: 12px;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
+  width: 380px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
 
         h2 {
           text-align: center;
