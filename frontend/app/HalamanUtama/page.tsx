@@ -123,6 +123,13 @@ export default function DashboardPage() {
           margin-bottom: 50px;
           font-size: 18px;
         }
+/* GRID */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 25px;
+        }
+
 
 
 
