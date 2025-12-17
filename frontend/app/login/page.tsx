@@ -78,17 +78,22 @@ export default function LoginPage() {
   background-position: center;
   background-repeat: no-repeat;
 }
+.login-card {
+  width: 400px;
+  padding: 40px 35px;
 
-        .login-card {
-  width: 380px;
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.8s ease;
 }
+
 
         h2 {
           text-align: center;
