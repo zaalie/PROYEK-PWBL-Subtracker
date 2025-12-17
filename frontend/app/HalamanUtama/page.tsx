@@ -46,5 +46,9 @@ export default function DashboardPage() {
             <h3>📊 Statistik Bulanan</h3>
             <p>Analisis total pengeluaran Anda</p>
           </div>
+  <div className="card" onClick={() => alert("Fitur Pengaturan")}>
+            <h3>⚙️ Pengaturan</h3>
+            <p>Kelola akun dan preferensi</p>
+          </div>
 
 
