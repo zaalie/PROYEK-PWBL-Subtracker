@@ -56,15 +56,26 @@ export default function LoginPage() {
 
       {/* CSS LANGSUNG DI page.tsx */}
       <style jsx global>{`
-        body {
-          margin: 0;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: linear-gradient(#86efac, #86efac, #1e40af);
-          font-family: Arial, sans-serif;
-        }
+       body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+
+  background-image: linear-gradient(
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.75)
+    ),
+    url("/login.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
         .login-card {
           width: 380px;
