@@ -22,4 +22,10 @@ export default function DashboardPage() {
           </button>
         </div>
       </nav>
+ {/* MAIN CONTENT */}
+      <main className="dashboard">
+        <h1>Dashboard</h1>
+        <p className="subtitle">
+          Kelola dan pantau seluruh langganan digital Anda dengan mudah
+        </p>
 
