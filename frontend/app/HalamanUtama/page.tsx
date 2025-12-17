@@ -72,4 +72,21 @@ export default function DashboardPage() {
           color: white;
         }
 
+          /* NAVBAR */
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 20px 60px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: rgba(2, 6, 23, 0.6);
+          backdrop-filter: blur(10px);
+          z-index: 1000;
+          box-sizing: border-box;
+        }
+
+
 
