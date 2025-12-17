@@ -94,12 +94,27 @@ export default function LoginPage() {
   animation: fadeIn 0.8s ease;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
         h2 {
-          text-align: center;
-          color: #1e40af;
-          margin-bottom: 5px;
-        }
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #1e3a8a;
+  margin-bottom: 6px;
+}
+
 
         .subtitle {
           text-align: center;
