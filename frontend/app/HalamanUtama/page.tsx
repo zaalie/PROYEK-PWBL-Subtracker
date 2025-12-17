@@ -42,5 +42,9 @@ export default function DashboardPage() {
             <h3>⏰ Pengingat Tagihan</h3>
             <p>Notifikasi sebelum jatuh tempo</p>
           </div>
+<div className="card" onClick={() => alert("Fitur Statistik")}>
+            <h3>📊 Statistik Bulanan</h3>
+            <p>Analisis total pengeluaran Anda</p>
+          </div>
 
 
