@@ -136,19 +136,51 @@ export default function HomePage() {
 
 
 .hero p {
-  font-size: 30px;
-  color: #cbd5f5;
-  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 760px;
+
+  color: rgba(226, 232, 240, 0.85); /* putih soft */
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+
+  margin: 28px auto 45px;
 }
+
 
 
         
 
-        .hero p {
-          font-size: 18px;
-          color: #cbd5f5;
-          margin-bottom: 35px;
-        }
+        .hero-subtitle {
+  position: relative;
+}
+
+.hero-subtitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 22px auto 0;
+
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  border-radius: 999px;
+}
+
+.hero p {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
        .hero-buttons {
   display: flex;
