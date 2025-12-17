@@ -28,4 +28,11 @@ export default function DashboardPage() {
         <p className="subtitle">
           Kelola dan pantau seluruh langganan digital Anda dengan mudah
         </p>
+{/* FEATURE CARDS */}
+        <div className="grid">
+          <div className="card" onClick={() => alert("Fitur Tambah Langganan")}>
+            <h3>➕ Tambah Langganan</h3>
+            <p>Catat layanan baru seperti Netflix, Spotify, Adobe</p>
+          </div>
+
 
