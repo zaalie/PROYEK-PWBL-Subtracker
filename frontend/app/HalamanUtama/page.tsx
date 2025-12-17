@@ -113,6 +113,19 @@ export default function DashboardPage() {
           text-align: center;
         }
 
+         .dashboard h1 {
+          font-size: 48px;
+          margin-bottom: 10px;
+        }
+
+        .subtitle {
+          color: #cbd5f5;
+          margin-bottom: 50px;
+          font-size: 18px;
+        }
+
+
+
 
 
 
