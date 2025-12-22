@@ -1,19 +1,36 @@
-import { prisma } from "@/lib/prisma";
-import { success, error } from "@/lib/response";
-import { comparePassword } from "@/lib/auth";
+import { prisma } from "@/lib/prisma"
+import { response } from "@/lib/response"
+import { signToken } from "@/lib/auth"
+import bcrypt from "bcryptjs"
 
 export async function POST(req: Request) {
-  const { email, password } = await req.json();
+  try {
+    const { email, password } = await req.json()
 
-  const user = await prisma.user.findUnique({ where: { email } });
-  if (!user) return error("User not found", 404);
+    if (!email || !password) {
+      return response.badRequest("Email dan password wajib")
+    }
 
-  const isValid = await comparePassword(password, user.password);
-  if (!isValid) return error("Wrong password", 401);
+    const user = await prisma.user.findUnique({
+      where: { email },
+    })
 
-  return success({
-    id: user.id,
-    name: user.name,
-    email: user.email,
-  });
+    if (!user) return response.notFound("User tidak ditemukan")
+
+    const valid = await bcrypt.compare(password, user.password)
+    if (!valid) return response.badRequest("Password salah")
+
+    const token = signToken({ userId: user.id })
+
+    return response.ok({
+      token,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+      },
+    })
+  } catch {
+    return response.serverError()
+  }
 }
