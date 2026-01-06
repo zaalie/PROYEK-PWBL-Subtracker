@@ -35,3 +35,10 @@ export async function PUT(req: Request, { params }: Params) {
     return apiResponse.serverError()
   }
 }
+
+// DELETE SUBSCRIPTION //
+export async function DELETE(_: Request, { params }: Params) {
+  try {
+    await prisma.subscription.delete({
+      where: { id: Number(params.id) },
+    })
