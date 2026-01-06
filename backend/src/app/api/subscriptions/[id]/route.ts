@@ -1,9 +1,11 @@
 import { prisma } from "@/lib/prisma"
 import { apiResponse } from "@/lib/response"
 
-type Params = { params: { id: string } }
+type Params = {
+  params: { id: string }
+}
 
-// GET SUBSCRIPTION BY ID //
+// MENAMPILKAN SATU DATA SUBSCRIPTION MENURUT ID //
 export async function GET(_: Request, { params }: Params) {
   try {
     const subscription = await prisma.subscription.findUnique({
@@ -16,6 +18,7 @@ export async function GET(_: Request, { params }: Params) {
 
     return apiResponse.ok(subscription)
   } catch (error) {
+    console.error(error)
     return apiResponse.serverError()
   }
 }
@@ -30,8 +33,9 @@ export async function PUT(req: Request, { params }: Params) {
       data: body,
     })
 
-     return apiResponse.ok(subscription)
+    return apiResponse.ok(subscription)
   } catch (error) {
+    console.error(error)
     return apiResponse.serverError()
   }
 }
@@ -43,8 +47,11 @@ export async function DELETE(_: Request, { params }: Params) {
       where: { id: Number(params.id) },
     })
 
-    return apiResponse.ok({ message: "Subscription berhasil dihapus" })
+    return apiResponse.ok({
+      message: "Subscription berhasil dihapus",
+    })
   } catch (error) {
+    console.error(error)
     return apiResponse.serverError()
   }
 }
