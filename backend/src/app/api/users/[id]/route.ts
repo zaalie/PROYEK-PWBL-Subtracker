@@ -68,3 +68,15 @@ export async function DELETE(
     await prisma.user.delete({
       where: { id: Number(params.id) },
     });
+
+    return NextResponse.json({
+      success: true,
+      message: "User berhasil dihapus",
+    });
+  } catch {
+    return NextResponse.json(
+      { success: false, message: "Gagal menghapus user" },
+      { status: 500 }
+    );
+  }
+}
