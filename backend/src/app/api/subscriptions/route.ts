@@ -12,3 +12,13 @@ export async function GET() {
     return apiResponse.serverError()
   }
 }
+
+// CREATE SUBSCRIPTIONS //
+export async function POST(req: Request) {
+  try {
+    const body = await req.json()
+    const { name, price, category, cycle, nextPayment, notes } = body
+
+    if (!name || !price || !nextPayment) {
+      return apiResponse.badRequest("Data wajib belum lengkap")
+    }
