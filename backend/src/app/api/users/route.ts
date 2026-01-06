@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-// Menampilkan semua data user //
+// Menampilkan Semua Data User //
 export async function GET() {
   try {
     const users = await prisma.user.findMany({
