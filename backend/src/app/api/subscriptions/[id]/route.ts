@@ -46,3 +46,18 @@ export async function PUT(
   }
 }
 
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  const id = Number(params.id);
+
+  if (isNaN(id)) {
+    return apiResponse.badRequest("ID tidak valid");
+  }
+
+  try {
+    await prisma.subscription.delete({
+      where: { id },
+    });
+
