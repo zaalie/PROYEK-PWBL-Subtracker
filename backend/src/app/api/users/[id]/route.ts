@@ -58,3 +58,13 @@ export async function PUT(
     );
   }
 }
+
+// DELETE USER //
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  try {
+    await prisma.user.delete({
+      where: { id: Number(params.id) },
+    });
