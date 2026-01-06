@@ -12,3 +12,9 @@ export async function GET() {
         isActive: true,
       },
     });
+
+    return apiResponse.ok(reminders);
+  } catch {
+    return apiResponse.serverError();
+  }
+}
