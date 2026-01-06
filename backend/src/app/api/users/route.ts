@@ -11,3 +11,12 @@ export async function GET() {
         email: true,
       },
     });
+
+    return NextResponse.json({ success: true, data: users });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: "Gagal mengambil data user" },
+      { status: 500 }
+    );
+  }
+}
