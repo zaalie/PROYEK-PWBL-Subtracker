@@ -42,3 +42,9 @@ export async function DELETE(_: Request, { params }: Params) {
     await prisma.subscription.delete({
       where: { id: Number(params.id) },
     })
+
+    return apiResponse.ok({ message: "Subscription berhasil dihapus" })
+  } catch (error) {
+    return apiResponse.serverError()
+  }
+}
