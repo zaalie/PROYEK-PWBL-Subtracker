@@ -104,3 +104,13 @@ export async function PUT(req: NextRequest) {
   return response(true, user)
 }
 
+// DELETE USER Menghapus user berdasarkan ID //
+export async function DELETE(req: NextRequest) {
+  const id = Number(new URL(req.url).searchParams.get("id"))
+
+  await prisma.user.delete({
+    where: { id },
+  })
+
+  return response(true, null, "User berhasil dihapus")
+}
