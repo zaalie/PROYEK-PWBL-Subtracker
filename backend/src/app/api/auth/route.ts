@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     return response(false, null, "Action wajib diisi")
   }
 
-// REGISTER USER //
+  // REGISTER USER //
   if (action === "register") {
     if (!name || !email || !password) {
       return response(false, null, "Semua field wajib diisi")
@@ -58,3 +58,34 @@ export async function POST(req: NextRequest) {
       email: user.email,
     })
   }
+
+  // LOGIN USER //
+  if (action === "login") {
+    if (!email || !password) {
+      return response(false, null, "Email dan password wajib diisi")
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { email },
+    })
+
+    if (!user) {
+      return response(false, null, "Login gagal")
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password)
+
+    if (!isMatch) {
+      return response(false, null, "Login gagal")
+    }
+
+    return response(true, {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    })
+  }
+
+  return response(false, null, "Action tidak dikenali")
+}
+
