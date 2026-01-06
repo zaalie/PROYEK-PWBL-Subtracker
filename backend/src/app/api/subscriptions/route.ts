@@ -14,3 +14,12 @@ export async function POST(req: Request) {
     return apiResponse.serverError();
   }
 }
+
+export async function GET() {
+  try {
+    const data = await prisma.subscription.findMany();
+    return apiResponse.ok(data);
+  } catch {
+    return apiResponse.serverError();
+  }
+}
