@@ -49,3 +49,12 @@ export async function PUT(
         email: true,
       },
     });
+
+    return NextResponse.json({ success: true, data: user });
+  } catch {
+    return NextResponse.json(
+      { success: false, message: "Gagal update user" },
+      { status: 500 }
+    );
+  }
+}
