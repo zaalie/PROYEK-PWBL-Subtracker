@@ -19,3 +19,13 @@ export async function GET(_: Request, { params }: Params) {
     return apiResponse.serverError()
   }
 }
+
+// UPDATE SUBSCRIPTION //
+export async function PUT(req: Request, { params }: Params) {
+  try {
+    const body = await req.json()
+
+    const subscription = await prisma.subscription.update({
+      where: { id: Number(params.id) },
+      data: body,
+    })
