@@ -1,39 +1,13 @@
 import { prisma } from "@/lib/prisma";
-import { apiResponse } from "@/lib/response";
-import bcrypt from "bcryptjs";
+import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+// Menampilkan semua data user //
+export async function GET() {
   try {
-    const { name, email, password } = await req.json();
-
-    if (!name || !email || !password) {
-      return apiResponse.badRequest("Data tidak lengkap");
-    }
-
-    const exists = await prisma.user.findUnique({
-      where: { email },
-    });
-
-    if (exists) {
-      return apiResponse.badRequest("Email sudah terdaftar");
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: hashedPassword,
+    const users = await prisma.user.findMany({
+      select: {
+        id: true,
+        name: true,
+        email: true,
       },
     });
-
-    return apiResponse.created({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-    });
-  } catch {
-    return apiResponse.serverError();
-  }
-}
