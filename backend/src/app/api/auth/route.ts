@@ -26,5 +26,35 @@ export async function POST(req: NextRequest) {
 
   if (!action) {
     return response(false, null, "Action wajib diisi")
-  } 
+  }
 
+// REGISTER USER //
+  if (action === "register") {
+    if (!name || !email || !password) {
+      return response(false, null, "Semua field wajib diisi")
+    }
+
+    const existUser = await prisma.user.findUnique({
+      where: { email },
+    })
+
+    if (existUser) {
+      return response(false, null, "Email sudah terdaftar")
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    const user = await prisma.user.create({
+      data: {
+        name,
+        email,
+        password: hashedPassword,
+      },
+    })
+
+    return response(true, {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    })
+  }
