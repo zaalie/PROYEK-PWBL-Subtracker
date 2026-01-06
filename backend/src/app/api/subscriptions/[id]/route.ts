@@ -13,4 +13,12 @@ export async function GET(
 
   const subscription = await prisma.subscription.findUnique({
     where: { id },
-  }); 
+  });
+  
+  if (!subscription) {
+    return apiResponse.notFound("Subscription tidak ditemukan");
+  }
+
+  return apiResponse.ok(subscription);
+}
+
