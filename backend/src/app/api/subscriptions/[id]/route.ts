@@ -61,3 +61,9 @@ export async function DELETE(
       where: { id },
     });
 
+    return apiResponse.ok({ message: "Subscription berhasil dihapus" });
+  } catch {
+    return apiResponse.serverError();
+  }
+}
+
