@@ -22,3 +22,20 @@ export async function POST(req: Request) {
     if (!name || !price || !nextPayment) {
       return apiResponse.badRequest("Data wajib belum lengkap")
     }
+
+    const subscription = await prisma.subscription.create({
+      data: {
+        name,
+        price,
+        category,
+        cycle,
+        nextPayment: new Date(nextPayment),
+        notes,
+      },
+    })
+
+    return apiResponse.created(subscription)
+  } catch (error) {
+    return apiResponse.serverError()
+  }
+}
