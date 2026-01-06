@@ -3,3 +3,4 @@ import { apiResponse } from "@/lib/response"
 
 type Params = { params: { id: string } }
 
+// GET SUBSCRIPTION BY ID //
