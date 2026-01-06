@@ -7,3 +7,12 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const id = Number(params.id); 
+
+  if (isNaN(id)) {
+    return apiResponse.badRequest("ID tidak valid");
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { id },
+    select: { id: true, name: true, email: true },
+  });
