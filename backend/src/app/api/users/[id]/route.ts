@@ -15,3 +15,19 @@ export async function GET(
         email: true,
       },
     });
+
+    if (!user) {
+      return NextResponse.json(
+        { success: false, message: "User tidak ditemukan" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ success: true, data: user });
+  } catch {
+    return NextResponse.json(
+      { success: false, message: "Terjadi kesalahan" },
+      { status: 500 }
+    );
+  }
+}
