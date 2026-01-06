@@ -16,3 +16,8 @@ export async function GET(
     where: { id },
     select: { id: true, name: true, email: true },
   });
+
+  if (!user) return apiResponse.notFound();
+
+  return apiResponse.ok(user);
+}
