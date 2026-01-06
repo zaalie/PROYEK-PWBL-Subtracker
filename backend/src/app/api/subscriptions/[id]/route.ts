@@ -32,3 +32,17 @@ export async function PUT(
     return apiResponse.badRequest("ID tidak valid");
   }
 
+  try {
+    const data = await req.json();
+
+    const updated = await prisma.subscription.update({
+      where: { id },
+      data,
+    });
+
+    return apiResponse.ok(updated);
+  } catch {
+    return apiResponse.serverError();
+  }
+}
+
