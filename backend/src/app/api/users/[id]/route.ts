@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-// Mengambil Salah Satu Data User Menurut Id //
+// Menampilkan Salah Satu Data User Menurut ID //
 export async function GET(
   req: Request,
   { params }: { params: { id: string } }
