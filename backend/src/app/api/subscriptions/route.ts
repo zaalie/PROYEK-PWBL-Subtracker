@@ -6,3 +6,9 @@ export async function GET() {
     const subscriptions = await prisma.subscription.findMany({
       orderBy: { createdAt: "desc" },
     })
+
+    return apiResponse.ok(subscriptions)
+  } catch (error) {
+    return apiResponse.serverError()
+  }
+}
