@@ -89,3 +89,18 @@ export async function POST(req: NextRequest) {
   return response(false, null, "Action tidak dikenali")
 }
 
+// UPDATE USER Mengubah data user berdasarkan ID //
+export async function PUT(req: NextRequest) {
+  const { id, name, email } = await req.json()
+
+  const user = await prisma.user.update({
+    where: { id },
+    data: {
+      name,
+      email,
+    },
+  })
+
+  return response(true, user)
+}
+
