@@ -31,3 +31,21 @@ export async function GET(
     );
   }
 }
+
+// UPDATE USER //
+export async function PUT(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const { name, email } = await req.json();
+
+    const user = await prisma.user.update({
+      where: { id: Number(params.id) },
+      data: { name, email },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
+    });
