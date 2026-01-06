@@ -18,4 +18,13 @@ export async function GET() {
   })
 
   return response(true, users)
-} 
+}
+
+// REGISTER & LOGIN USER Menggunakan parameter "action" action: register | login // 
+export async function POST(req: NextRequest) {
+  const { action, name, email, password } = await req.json()
+
+  if (!action) {
+    return response(false, null, "Action wajib diisi")
+  } 
+
