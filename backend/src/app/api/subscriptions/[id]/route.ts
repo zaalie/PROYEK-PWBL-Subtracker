@@ -22,3 +22,13 @@ export async function GET(
   return apiResponse.ok(subscription);
 }
 
+export async function PUT(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  const id = Number(params.id);
+
+  if (isNaN(id)) {
+    return apiResponse.badRequest("ID tidak valid");
+  }
+
