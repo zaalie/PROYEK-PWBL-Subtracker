@@ -2,17 +2,11 @@ import { NextResponse } from "next/server";
 
 export const apiResponse = {
   ok(data: unknown) {
-    return NextResponse.json(
-      { success: true, data },
-      { status: 200 }
-    );
+    return NextResponse.json({ success: true, data }, { status: 200 });
   },
 
   created(data: unknown) {
-    return NextResponse.json(
-      { success: true, data },
-      { status: 201 }
-    );
+    return NextResponse.json({ success: true, data }, { status: 201 });
   },
 
   badRequest(message: string) {
