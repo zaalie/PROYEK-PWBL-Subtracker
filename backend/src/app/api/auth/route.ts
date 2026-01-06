@@ -7,3 +7,15 @@ const response = (success: boolean, data?: any, message?: string) => {
   return Response.json({ success, data, message })
 }
 
+//GET USER Menampilkan seluruh data user (tanpa password) // 
+export async function GET() {
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true,
+    },
+  })
+
+  return response(true, users)
+} 
