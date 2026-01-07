@@ -6,3 +6,12 @@ import bcrypt from "bcryptjs";
 export async function POST(req: Request) {
   try {
     const { action, name, email, password } = await req.json()
+
+// VALIDASI UMUM
+    if (!action || !email || !password) {
+      return NextResponse.json(
+        { success: false, message: "Data wajib belum lengkap" },
+        { status: 400 }
+      )
+    }
+    
