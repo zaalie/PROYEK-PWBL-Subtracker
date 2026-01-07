@@ -19,7 +19,7 @@ export async function GET(_: Request, { params }: Params) {
 
     return apiResponse.ok(subscription)
   } catch (error) {
-    console.error(error)
+    console.error("GET /subscriptions/[id] error:", error)
     return apiResponse.serverError()
   }
 }
