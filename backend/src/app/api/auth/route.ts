@@ -23,3 +23,11 @@ if (action === "register") {
           { status: 400 }
         )
       }
+
+const exists = await prisma.user.findUnique({ where: { email } })
+      if (exists) {
+        return NextResponse.json(
+          { success: false, message: "Email sudah terdaftar" },
+          { status: 409 }
+        )
+      }
