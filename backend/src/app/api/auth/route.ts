@@ -45,3 +45,11 @@ const user = await prisma.user.create({
     }
 
 // LOGIN //
+if (action === "login") {
+      const user = await prisma.user.findUnique({ where: { email } })
+      if (!user || !(await bcrypt.compare(password, user.password))) {
+        return NextResponse.json(
+          { success: false, message: "Email atau password salah" },
+          { status: 401 }
+        )
+      }
