@@ -10,3 +10,10 @@ export async function GET() {
         createdAt: "desc",
       },
     })
+
+    return apiResponse.ok(subscriptions)
+  } catch (error) {
+    console.error("GET /subscriptions error:", error)
+    return apiResponse.serverError()
+  }
+}
