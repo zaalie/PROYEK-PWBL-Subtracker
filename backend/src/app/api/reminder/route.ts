@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { apiResponse } from "@/lib/response";
 
+// MENAMPILKAN DATA REMINDER //
 export async function GET() {
   try {
     const today = new Date();
