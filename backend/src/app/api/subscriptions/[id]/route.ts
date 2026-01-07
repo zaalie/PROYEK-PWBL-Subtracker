@@ -57,6 +57,13 @@ export async function PUT(req: Request, { params }: Params) {
       },
     })
 
+    return apiResponse.ok(subscription)
+  } catch (error) {
+    console.error("PUT /subscriptions/[id] error:", error)
+    return apiResponse.serverError()
+  }
+}
+
 // DELETE SUBSCRIPTION //
 export async function DELETE(_: Request, { params }: Params) {
   try {
