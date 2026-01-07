@@ -53,3 +53,12 @@ if (action === "login") {
           { status: 401 }
         )
       }
+
+return NextResponse.json(
+        {
+          success: true,
+          data: { id: user.id, name: user.name, email: user.email },
+        },
+        { status: 200 }
+      )
+    }
