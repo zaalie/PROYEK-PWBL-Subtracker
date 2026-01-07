@@ -1,10 +1,12 @@
-import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { NextResponse } from "next/server";
 
-export async function PUT(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+type Params = {
+  params: { id: string };
+};
+
+// UPDATE USER
+export async function PUT(req: Request, { params }: Params) {
   try {
     const id = Number(params.id);
     if (isNaN(id)) {
@@ -15,56 +17,56 @@ export async function PUT(
     }
 
     const body = await req.json();
-    const { name, email } = body;
 
     const user = await prisma.user.update({
       where: { id },
       data: {
-        name,
-        email,
+        name: body.name,
+        email: body.email,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
       },
     });
-
-    return NextResponse.json({
-      success: true,
-      data: user,
-    });
-  } catch (error: any) {
-    console.error(error);
 
     return NextResponse.json(
-      {
-        success: false,
-        message: "Gagal update user",
-        error: error.message,
-      },
+      { success: true, data: user },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { success: false, message: "Gagal update user" },
       { status: 500 }
     );
   }
 }
 
-export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+// DELETE USER
+export async function DELETE(_: Request, { params }: Params) {
   try {
     const id = Number(params.id);
+    if (isNaN(id)) {
+      return NextResponse.json(
+        { success: false, message: "ID tidak valid" },
+        { status: 400 }
+      );
+    }
 
     await prisma.user.delete({
       where: { id },
     });
 
-    return NextResponse.json({
-      success: true,
-      message: "User berhasil dihapus",
-    });
-  } catch (error: any) {
     return NextResponse.json(
-      {
-        success: false,
-        message: "Gagal delete user",
-        error: error.message,
-      },
+      { success: true, message: "User berhasil dihapus" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { success: false, message: "Gagal hapus user" },
       { status: 500 }
     );
   }
