@@ -1,82 +1,49 @@
-import { prisma } from "@/lib/prisma";
-import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma"
+import { NextResponse } from "next/server"
 
-// Menampilkan Salah Satu Data User Menurut ID //
+// ================= GET USER BY ID =================
+// Endpoint untuk mengambil 1 user berdasarkan ID
 export async function GET(
-  req: Request,
+  _: Request,
   { params }: { params: { id: string } }
 ) {
   try {
+    const id = Number(params.id)
+
+    // Validasi ID
+    if (isNaN(id)) {
+      return NextResponse.json(
+        { success: false, message: "ID tidak valid" },
+        { status: 400 }
+      )
+    }
+
     const user = await prisma.user.findUnique({
-      where: { id: Number(params.id) },
+      where: { id },
       select: {
         id: true,
         name: true,
         email: true,
       },
-    });
+    })
 
+    // Jika user tidak ditemukan
     if (!user) {
       return NextResponse.json(
         { success: false, message: "User tidak ditemukan" },
         { status: 404 }
-      );
+      )
     }
 
-    return NextResponse.json({ success: true, data: user });
-  } catch {
     return NextResponse.json(
-      { success: false, message: "Terjadi kesalahan" },
-      { status: 500 }
-    );
-  }
-}
-
-// UPDATE USER //
-export async function PUT(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const { name, email } = await req.json();
-
-    const user = await prisma.user.update({
-      where: { id: Number(params.id) },
-      data: { name, email },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-      },
-    });
-
-    return NextResponse.json({ success: true, data: user });
-  } catch {
+      { success: true, data: user },
+      { status: 200 }
+    )
+  } catch (error) {
+    console.error("GET USER BY ID ERROR:", error)
     return NextResponse.json(
-      { success: false, message: "Gagal update user" },
+      { success: false, message: "Internal server error" },
       { status: 500 }
-    );
-  }
-}
-
-// DELETE USER //
-export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
-  try {
-    await prisma.user.delete({
-      where: { id: Number(params.id) },
-    });
-
-    return NextResponse.json({
-      success: true,
-      message: "User berhasil dihapus",
-    });
-  } catch {
-    return NextResponse.json(
-      { success: false, message: "Gagal menghapus user" },
-      { status: 500 }
-    );
+    )
   }
 }
