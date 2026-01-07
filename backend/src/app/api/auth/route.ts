@@ -31,3 +31,15 @@ const exists = await prisma.user.findUnique({ where: { email } })
           { status: 409 }
         )
       }
+
+const user = await prisma.user.create({
+        data: {
+          name,
+          email,
+          password: await bcrypt.hash(password, 12),
+        },
+        select: { id: true, name: true, email: true },
+      })
+
+      return NextResponse.json({ success: true, data: user }, { status: 201 })
+    }
