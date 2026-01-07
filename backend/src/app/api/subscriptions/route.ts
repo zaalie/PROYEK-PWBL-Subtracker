@@ -19,4 +19,22 @@ export async function GET() {
 }
 
 // MENAMBAHKAN SUBSCRIPTION BARU//
+export async function POST(req: Request) {
+  try {
+    const body = await req.json()
 
+    const {
+      name,
+      price,
+      category,
+      cycle,
+      nextPayment,
+      notes,
+    } = body as {
+      name: string
+      price: number
+      category?: Category
+      cycle?: Cycle
+      nextPayment: string
+      notes?: string
+    }
