@@ -29,17 +29,21 @@ export async function PUT(req: Request, { params }: Params) {
   try {
     const body = await req.json()
 
-    const subscription = await prisma.subscription.update({
-      where: { id: Number(params.id) },
-      data: body,
-    })
-
-    return apiResponse.ok(subscription)
-  } catch (error) {
-    console.error(error)
-    return apiResponse.serverError()
-  }
-}
+    const {
+      name,
+      price,
+      category,
+      cycle,
+      nextPayment,
+      notes,
+    } = body as {
+      name?: string
+      price?: number
+      category?: Category
+      cycle?: Cycle
+      nextPayment?: string
+      notes?: string
+    }
 
 // DELETE SUBSCRIPTION //
 export async function DELETE(_: Request, { params }: Params) {
