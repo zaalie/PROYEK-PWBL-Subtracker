@@ -38,3 +38,17 @@ export async function POST(req: Request) {
       nextPayment: string
       notes?: string
     }
+
+    // Validasi data wajib
+    if (!name || !price || !nextPayment) {
+      return apiResponse.badRequest("Data wajib belum lengkap")
+    }
+
+    const subscription = await prisma.subscription.create({
+      data: {
+        name,
+        price,
+        category: category ?? Category.OTHER,
+        cycle: cycle ?? Cycle.MONTHLY,
+        nextPayment: new Date(nextPayment),
+        notes,
