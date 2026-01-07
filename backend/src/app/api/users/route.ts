@@ -82,6 +82,7 @@ export async function PUT(req: Request) {
     const dataUpdate: any = {
       name,
       email,
+      password,
     };
 
     if (password) {
