@@ -62,3 +62,16 @@ return NextResponse.json(
         { status: 200 }
       )
     }
+
+return NextResponse.json(
+      { success: false, message: "Action tidak valid" },
+      { status: 400 }
+    )
+  } catch (error) {
+    console.error(error)
+    return NextResponse.json(
+      { success: false, message: "Internal server error" },
+      { status: 500 }
+    )
+  }
+}
