@@ -45,6 +45,18 @@ export async function PUT(req: Request, { params }: Params) {
       notes?: string
     }
 
+    const subscription = await prisma.subscription.update({
+      where: { id: Number(params.id) },
+      data: {
+        name,
+        price,
+        category,
+        cycle,
+        nextPayment: nextPayment ? new Date(nextPayment) : undefined,
+        notes,
+      },
+    })
+
 // DELETE SUBSCRIPTION //
 export async function DELETE(_: Request, { params }: Params) {
   try {
