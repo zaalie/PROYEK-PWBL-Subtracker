@@ -52,3 +52,15 @@ export async function POST(req: Request) {
         cycle: cycle ?? Cycle.MONTHLY,
         nextPayment: new Date(nextPayment),
         notes,
+
+        // Relasi user (sementara, tanpa autentikasi)
+        userId: 1,
+      },
+    })
+
+    return apiResponse.created(subscription)
+  } catch (error) {
+    console.error("POST /subscriptions error:", error)
+    return apiResponse.serverError()
+  }
+}
