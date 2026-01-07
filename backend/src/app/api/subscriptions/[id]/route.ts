@@ -75,7 +75,7 @@ export async function DELETE(_: Request, { params }: Params) {
       message: "Subscription berhasil dihapus",
     })
   } catch (error) {
-    console.error(error)
+    console.error("DELETE /subscriptions/[id] error:", error)
     return apiResponse.serverError()
   }
 }
