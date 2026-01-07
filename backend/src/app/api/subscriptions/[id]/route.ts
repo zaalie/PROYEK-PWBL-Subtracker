@@ -9,8 +9,13 @@ type Params = {
 // MENAMPILKAN SATU DATA SUBSCRIPTION MENURUT ID //
 export async function GET(_: Request, { params }: Params) {
   try {
+    const id = Number(params.id)
+    if (isNaN(id)) {
+      return apiResponse.badRequest("ID tidak valid")
+    }
+
     const subscription = await prisma.subscription.findUnique({
-      where: { id: Number(params.id) },
+      where: { id },
     })
 
     if (!subscription) {
@@ -27,7 +32,10 @@ export async function GET(_: Request, { params }: Params) {
 // UPDATE SUBSCRIPTION //
 export async function PUT(req: Request, { params }: Params) {
   try {
-    const body = await req.json()
+    const id = Number(params.id)
+    if (isNaN(id)) {
+      return apiResponse.badRequest("ID tidak valid")
+    }
 
     const {
       name,
@@ -36,17 +44,19 @@ export async function PUT(req: Request, { params }: Params) {
       cycle,
       nextPayment,
       notes,
-    } = body as {
-      name?: string
-      price?: number
-      category?: Category
-      cycle?: Cycle
-      nextPayment?: string
-      notes?: string
+    } = await req.json()
+
+    // cek dulu
+    const existing = await prisma.subscription.findUnique({
+      where: { id },
+    })
+
+    if (!existing) {
+      return apiResponse.notFound("Subscription tidak ditemukan")
     }
 
-    const subscription = await prisma.subscription.update({
-      where: { id: Number(params.id) },
+    const updated = await prisma.subscription.update({
+      where: { id },
       data: {
         name,
         price,
@@ -57,7 +67,7 @@ export async function PUT(req: Request, { params }: Params) {
       },
     })
 
-    return apiResponse.ok(subscription)
+    return apiResponse.ok(updated)
   } catch (error) {
     console.error("PUT /subscriptions/[id] error:", error)
     return apiResponse.serverError()
@@ -67,8 +77,21 @@ export async function PUT(req: Request, { params }: Params) {
 // DELETE SUBSCRIPTION //
 export async function DELETE(_: Request, { params }: Params) {
   try {
+    const id = Number(params.id)
+    if (isNaN(id)) {
+      return apiResponse.badRequest("ID tidak valid")
+    }
+
+    const existing = await prisma.subscription.findUnique({
+      where: { id },
+    })
+
+    if (!existing) {
+      return apiResponse.notFound("Subscription tidak ditemukan")
+    }
+
     await prisma.subscription.delete({
-      where: { id: Number(params.id) },
+      where: { id },
     })
 
     return apiResponse.ok({
