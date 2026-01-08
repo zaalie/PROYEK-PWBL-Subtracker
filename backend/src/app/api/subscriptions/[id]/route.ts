@@ -10,6 +10,7 @@ type Params = {
 export async function GET(_: Request, { params }: Params) {
   try {
     const id = Number(params.id)
+
     if (isNaN(id)) {
       return apiResponse.badRequest("ID tidak valid")
     }
@@ -33,6 +34,7 @@ export async function GET(_: Request, { params }: Params) {
 export async function PUT(req: Request, { params }: Params) {
   try {
     const id = Number(params.id)
+
     if (isNaN(id)) {
       return apiResponse.badRequest("ID tidak valid")
     }
@@ -45,15 +47,6 @@ export async function PUT(req: Request, { params }: Params) {
       nextPayment,
       notes,
     } = await req.json()
-
-    // cek dulu
-    const existing = await prisma.subscription.findUnique({
-      where: { id },
-    })
-
-    if (!existing) {
-      return apiResponse.notFound("Subscription tidak ditemukan")
-    }
 
     const updated = await prisma.subscription.update({
       where: { id },
@@ -78,16 +71,9 @@ export async function PUT(req: Request, { params }: Params) {
 export async function DELETE(_: Request, { params }: Params) {
   try {
     const id = Number(params.id)
+
     if (isNaN(id)) {
       return apiResponse.badRequest("ID tidak valid")
-    }
-
-    const existing = await prisma.subscription.findUnique({
-      where: { id },
-    })
-
-    if (!existing) {
-      return apiResponse.notFound("Subscription tidak ditemukan")
     }
 
     await prisma.subscription.delete({
