@@ -1,33 +1,29 @@
 import { prisma } from "@/lib/prisma"
 import { apiResponse } from "@/lib/response"
-import { Category, Cycle } from "@prisma/client"
 
 type Params = {
   params: { id: string }
 }
 
-// MENAMPILKAN SATU DATA SUBSCRIPTION MENURUT ID //
-export async function GET(_: Request, { params }: Params) {
-  try {
-    const id = Number(params.id)
+export async function GET(
+  _: Request,
+  { params }: Params
+) {
+  const id = Number(params.id)
 
-    if (isNaN(id)) {
-      return apiResponse.badRequest("ID tidak valid")
-    }
-
-    const subscription = await prisma.subscription.findUnique({
-      where: { id },
-    })
-
-    if (!subscription) {
-      return apiResponse.notFound("Subscription tidak ditemukan")
-    }
-
-    return apiResponse.ok(subscription)
-  } catch (error) {
-    console.error("GET /subscriptions/[id] error:", error)
-    return apiResponse.serverError()
+  if (isNaN(id)) {
+    return apiResponse.badRequest("ID tidak valid")
   }
+
+  const subscription = await prisma.subscription.findUnique({
+    where: { id },
+  })
+
+  if (!subscription) {
+    return apiResponse.notFound("Subscription tidak ditemukan")
+  }
+
+  return apiResponse.ok(subscription)
 }
 
 // UPDATE SUBSCRIPTION //
