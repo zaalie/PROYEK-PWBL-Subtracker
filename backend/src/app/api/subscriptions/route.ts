@@ -3,7 +3,7 @@ import { apiResponse } from "@/lib/response"
 import { Category, Cycle } from "@prisma/client"
 
 
-// MENAMPILKAN SEMUA DATA SUBSCRIPTION//
+// MENAMPILKAN SEMUA DATA SUBSCRIPTION //
 export async function GET() {
   try {
     const subscriptions = await prisma.subscription.findMany({
