@@ -2,7 +2,8 @@ import { prisma } from "@/lib/prisma"
 import { apiResponse } from "@/lib/response"
 import { Category, Cycle } from "@prisma/client"
 
-// MENAMPILKAN SEMUA DATA SUBSCRIPTION //
+
+// MENAMPILKAN SEMUA DATA SUBSCRIPTION//
 export async function GET() {
   try {
     const subscriptions = await prisma.subscription.findMany({
@@ -16,7 +17,7 @@ export async function GET() {
   }
 }
 
-// CREATE SUBSCRIPTION //
+// TAMBAH SUBSCRIPTION //
 export async function POST(req: Request) {
   try {
     const {
@@ -26,9 +27,11 @@ export async function POST(req: Request) {
       cycle,
       nextPayment,
       notes,
+      userId,
     } = await req.json()
 
-    if (!name || !price || !nextPayment) {
+    // VALIDASI WAJIB
+    if (!name || !price || !nextPayment || !userId) {
       return apiResponse.badRequest("Data wajib belum lengkap")
     }
 
@@ -40,9 +43,7 @@ export async function POST(req: Request) {
         cycle: cycle ?? Cycle.MONTHLY,
         nextPayment: new Date(nextPayment),
         notes,
-
-        // sementara tanpa auth
-        userId: 1,
+        userId,
       },
     })
 
