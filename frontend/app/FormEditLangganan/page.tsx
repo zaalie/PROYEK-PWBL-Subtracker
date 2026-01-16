@@ -120,3 +120,7 @@ export default function EditLanggananPage() {
           color: #cbd5f5;
           margin-bottom: 25px;
         }
+
+         .form-group {
+          margin-bottom: 18px;
+        }
