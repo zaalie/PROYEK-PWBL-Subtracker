@@ -45,3 +45,15 @@ export default function EditLanggananPage() {
               required
             />
           </div>
+
+          <div className="form-group">
+            <label>Harga (Rp)</label>
+            <input
+              type="number"
+              name="harga"
+              placeholder="150000"
+              value={formData.harga}
+              onChange={handleChange}
+              required
+            />
+          </div>
