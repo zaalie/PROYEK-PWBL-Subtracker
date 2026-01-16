@@ -113,3 +113,10 @@ export default function EditLanggananPage() {
           text-align: center;
           margin-bottom: 6px;
         }
+
+        .subtitle {
+          text-align: center;
+          font-size: 14px;
+          color: #cbd5f5;
+          margin-bottom: 25px;
+        }
