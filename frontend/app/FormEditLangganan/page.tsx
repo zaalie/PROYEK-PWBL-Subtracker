@@ -158,4 +158,11 @@ export default function EditLanggananPage() {
           cursor: pointer;
           transition: 0.3s;
         }
-          
+
+        .btn-submit:hover {
+          opacity: 0.9;
+        }
+      `}</style>
+    </div>
+  );
+}
