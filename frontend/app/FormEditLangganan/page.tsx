@@ -36,3 +36,12 @@ export default function EditLanggananPage() {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Nama Layanan</label>
+ <input
+              type="text"
+              name="nama"
+              placeholder="Netflix / Spotify"
+              value={formData.nama}
+              onChange={handleChange}
+              required
+            />
+          </div>
