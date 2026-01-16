@@ -98,3 +98,13 @@ export default function EditLanggananPage() {
           background: linear-gradient(135deg, #050b2e, #020617);
           color: #ffffff;
         }
+
+        .card {
+          width: 100%;
+          max-width: 420px;
+          padding: 30px;
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
