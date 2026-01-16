@@ -69,3 +69,14 @@ export default function EditLanggananPage() {
               <option value="Tahunan">Tahunan</option>
             </select>
           </div>
+
+          <div className="form-group">
+            <label>Tanggal Jatuh Tempo</label>
+            <input
+              type="date"
+              name="jatuhTempo"
+              value={formData.jatuhTempo}
+              onChange={handleChange}
+              required
+            />
+          </div>
