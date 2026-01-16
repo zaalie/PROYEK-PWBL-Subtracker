@@ -32,3 +32,7 @@ export default function EditLanggananPage() {
         <p className="subtitle">
           Perbarui detail langganan digital Anda
         </p>
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nama Layanan</label>
