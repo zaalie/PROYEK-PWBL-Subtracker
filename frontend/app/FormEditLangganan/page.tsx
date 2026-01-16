@@ -24,3 +24,11 @@ export default function EditLanggananPage() {
 
     alert("Langganan berhasil diperbarui!");
   };
+
+  return (
+    <div className="container">
+      <div className="card">
+        <h1>Edit Langganan</h1>
+        <p className="subtitle">
+          Perbarui detail langganan digital Anda
+        </p>
