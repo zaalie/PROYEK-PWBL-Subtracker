@@ -18,3 +18,9 @@ export default function EditLanggananPage() {
 
    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+      // Contoh kirim ke REST API
+    console.log(formData);
+
+    alert("Langganan berhasil diperbarui!");
+  };
