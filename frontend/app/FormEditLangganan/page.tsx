@@ -145,3 +145,17 @@ export default function EditLanggananPage() {
         input::placeholder {
           color: #cbd5f5;
         }
+
+        .btn-submit {
+          width: 100%;
+          padding: 12px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 10px;
+          background: linear-gradient(135deg, #6366f1, #4f46e5);
+          color: #ffffff;
+          font-size: 16px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+          
