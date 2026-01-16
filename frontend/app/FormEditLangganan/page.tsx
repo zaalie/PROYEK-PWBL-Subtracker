@@ -57,3 +57,15 @@ export default function EditLanggananPage() {
               required
             />
           </div>
+
+           <div className="form-group">
+            <label>Siklus Langganan</label>
+            <select
+              name="siklus"
+              value={formData.siklus}
+              onChange={handleChange}
+            >
+              <option value="Bulanan">Bulanan</option>
+              <option value="Tahunan">Tahunan</option>
+            </select>
+          </div>
