@@ -124,3 +124,9 @@ export default function EditLanggananPage() {
          .form-group {
           margin-bottom: 18px;
         }
+
+                label {
+          display: block;
+          margin-bottom: 6px;
+          font-size: 14px;
+        }
