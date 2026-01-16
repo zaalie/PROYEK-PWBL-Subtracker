@@ -80,3 +80,9 @@ export default function EditLanggananPage() {
               required
             />
           </div>
+
+           <button type="submit" className="btn-submit">
+            Simpan Langganan
+          </button>
+        </form>
+      </div>
