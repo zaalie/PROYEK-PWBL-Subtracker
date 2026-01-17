@@ -42,3 +42,15 @@ export default function SettingPage() {
               required
             />
           </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              value={settings.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
