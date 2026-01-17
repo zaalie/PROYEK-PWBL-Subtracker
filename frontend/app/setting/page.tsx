@@ -67,3 +67,11 @@ export default function SettingPage() {
               <option value="Nonaktif">Nonaktif</option>
             </select>
           </div>
+
+           <div className="form-group">
+            <label>Tema Aplikasi</label>
+            <select
+              name="tema"
+              value={settings.tema}
+              onChange={handleChange}
+            ></select>
