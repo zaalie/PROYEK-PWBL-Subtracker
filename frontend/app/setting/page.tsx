@@ -54,3 +54,11 @@ export default function SettingPage() {
               required
             />
           </div>
+
+          <div className="form-group">
+            <label>Notifikasi</label>
+            <select
+              name="notifikasi"
+              value={settings.notifikasi}
+              onChange={handleChange}
+            ></select>
