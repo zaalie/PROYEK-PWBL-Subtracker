@@ -80,3 +80,9 @@ export default function SettingPage() {
               <option value="Light">Light</option>
             </select>
           </div>
+
+           <button type="submit" className="btn-submit">
+            Simpan Pengaturan
+          </button>
+        </form>
+      </div>
