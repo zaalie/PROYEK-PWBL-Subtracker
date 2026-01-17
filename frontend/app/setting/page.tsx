@@ -62,3 +62,8 @@ export default function SettingPage() {
               value={settings.notifikasi}
               onChange={handleChange}
             ></select>
+
+            <option value="Aktif">Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
