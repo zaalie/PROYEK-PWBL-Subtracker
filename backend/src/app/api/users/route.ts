@@ -2,10 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
-/* =====================================================
-   GET ALL USERS
-   Menampilkan seluruh data user
-===================================================== */
+
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
