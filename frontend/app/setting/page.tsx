@@ -2,121 +2,164 @@
 
 import { useState } from "react";
 
-export default function SettingsPage() {
-  const [username, setUsername] = useState("User SubTracker");
-  const [email, setEmail] = useState("user@email.com");
-  const [reminder, setReminder] = useState("3");
-  const [theme, setTheme] = useState("Light");
+export default function SettingPage() {
+  const [settings, setSettings] = useState({
+    namaPengguna: "",
+    email: "",
+    notifikasi: "Aktif",
+    tema: "Dark",
+  });
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setSettings({ ...settings, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Pengaturan berhasil disimpan (dummy)");
+    console.log(settings);
+    alert("Pengaturan berhasil disimpan!");
   };
 
   return (
-    <>
-      <div className="settings-card">
-        <h1>Pengaturan Akun</h1>
+    <div className="container">
+      <div className="card">
+        <h1>Pengaturan</h1>
+        <p className="subtitle">
+          Atur preferensi akun dan aplikasi Anda
+        </p>
 
-        <form onSubmit={handleSave}>
-          <label>Nama Pengguna</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nama Pengguna</label>
+            <input
+              type="text"
+              name="namaPengguna"
+              placeholder="Annisa Zulfa"
+              value={settings.namaPengguna}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              value={settings.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>Pengingat Tagihan</label>
-          <select
-            value={reminder}
-            onChange={(e) => setReminder(e.target.value)}
-          >
-            <option value="1">H-1</option>
-            <option value="3">H-3</option>
-            <option value="7">H-7</option>
-          </select>
+          <div className="form-group">
+            <label>Notifikasi</label>
+            <select
+              name="notifikasi"
+              value={settings.notifikasi}
+              onChange={handleChange}
+            >
+              <option value="Aktif">Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
 
-          <label>Tema Aplikasi</label>
-          <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-            <option>Light</option>
-            <option>Dark</option>
-          </select>
+          <div className="form-group">
+            <label>Tema Aplikasi</label>
+            <select
+              name="tema"
+              value={settings.tema}
+              onChange={handleChange}
+            >
+              <option value="Dark">Dark</option>
+              <option value="Light">Light</option>
+            </select>
+          </div>
 
-          <button type="submit">Simpan Pengaturan</button>
+          <button type="submit" className="btn-submit">
+            Simpan Pengaturan
+          </button>
         </form>
       </div>
 
-      {/* CSS DIGABUNG DI FILE INI */}
-      <style jsx global>{`
-        body {
-          margin: 0;
-          height: 100vh;
+      {/* Styling */}
+      <style jsx>{`
+        .container {
+          min-height: 100vh;
           display: flex;
-          justify-content: center;
           align-items: center;
-          background: linear-gradient(135deg, #6366f1, #4338ca);
-          font-family: Arial, sans-serif;
+          justify-content: center;
+          background: linear-gradient(135deg, #050b2e, #020617);
+          color: #ffffff;
         }
 
-        .settings-card {
-          width: 420px;
-          background: white;
+        .card {
+          width: 100%;
+          max-width: 420px;
           padding: 30px;
-          border-radius: 14px;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
         }
 
         h1 {
           text-align: center;
-          color: #4338ca;
+          margin-bottom: 6px;
+        }
+
+        .subtitle {
+          text-align: center;
+          font-size: 14px;
+          color: #cbd5f5;
           margin-bottom: 25px;
+        }
+
+        .form-group {
+          margin-bottom: 18px;
         }
 
         label {
           display: block;
-          font-size: 14px;
           margin-bottom: 6px;
-          margin-top: 12px;
+          font-size: 14px;
         }
 
         input,
         select {
           width: 100%;
-          padding: 10px;
-          border-radius: 6px;
-          border: 1px solid #ccc;
-          font-size: 14px;
-        }
-
-        input:focus,
-        select:focus {
-          outline: none;
-          border-color: #6366f1;
-        }
-
-        button {
-          width: 100%;
-          margin-top: 20px;
-          padding: 12px;
-          background: #6366f1;
-          color: white;
-          border: none;
+          padding: 10px 12px;
           border-radius: 8px;
+          border: none;
+          outline: none;
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+        }
+
+        input::placeholder {
+          color: #cbd5f5;
+        }
+
+        .btn-submit {
+          width: 100%;
+          padding: 12px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 10px;
+          background: linear-gradient(135deg, #6366f1, #4f46e5);
+          color: #ffffff;
           font-size: 16px;
           cursor: pointer;
+          transition: 0.3s;
         }
 
-        button:hover {
-          background: #4338ca;
+        .btn-submit:hover {
+          opacity: 0.9;
         }
       `}</style>
-    </>
+    </div>
   );
 }
