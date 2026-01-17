@@ -54,3 +54,16 @@ export default function ReminderPage() {
               required
             />
           </div>
+
+           <div className="form-group">
+            <label>Waktu Pengingat</label>
+            <select
+              name="waktu"
+              value={reminder.waktu}
+              onChange={handleChange}
+            >
+              <option value="1">H-1</option>
+              <option value="3">H-3</option>
+              <option value="7">H-7</option>
+            </select>
+          </div>
