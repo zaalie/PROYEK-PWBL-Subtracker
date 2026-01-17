@@ -15,3 +15,10 @@ export default function ReminderPage() {
   ) => {
     setReminder({ ...reminder, [e.target.name]: e.target.value });
   };
+
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(reminder);
+    alert("Reminder berhasil disimpan!");
+  };
