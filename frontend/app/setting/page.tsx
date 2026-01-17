@@ -29,3 +29,16 @@ export default function SettingPage() {
         <p className="subtitle">
           Atur preferensi akun dan aplikasi Anda
         </p>
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nama Pengguna</label>
+            <input
+              type="text"
+              name="namaPengguna"
+              placeholder="Annisa Zulfa"
+              value={settings.namaPengguna}
+              onChange={handleChange}
+              required
+            />
+          </div>
