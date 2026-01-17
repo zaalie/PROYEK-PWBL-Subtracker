@@ -130,3 +130,14 @@ export default function SettingPage() {
           margin-bottom: 6px;
           font-size: 14px;
         }
+
+         input,
+        select {
+          width: 100%;
+          padding: 10px 12px;
+          border-radius: 8px;
+          border: none;
+          outline: none;
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+        }
