@@ -30,3 +30,16 @@ export default function ReminderPage() {
         <p className="subtitle">
           Atur pengingat jatuh tempo langganan Anda
         </p> 
+
+         <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nama Layanan</label>
+            <input
+              type="text"
+              name="layanan"
+              placeholder="Netflix / Spotify"
+              value={reminder.layanan}
+              onChange={handleChange}
+              required
+            />
+          </div>
