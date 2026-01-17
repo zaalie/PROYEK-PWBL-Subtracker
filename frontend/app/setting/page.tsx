@@ -21,3 +21,11 @@ export default function SettingPage() {
     console.log(settings);
     alert("Pengaturan berhasil disimpan!");
   };
+
+  return (
+    <div className="container">
+      <div className="card">
+        <h1>Pengaturan</h1>
+        <p className="subtitle">
+          Atur preferensi akun dan aplikasi Anda
+        </p>
