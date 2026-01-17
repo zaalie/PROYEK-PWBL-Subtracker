@@ -16,4 +16,8 @@ export default function SettingPage() {
     setSettings({ ...settings, [e.target.name]: e.target.value });
   };
 
-  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(settings);
+    alert("Pengaturan berhasil disimpan!");
+  };
