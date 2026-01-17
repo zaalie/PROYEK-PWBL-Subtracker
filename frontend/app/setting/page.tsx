@@ -141,3 +141,8 @@ export default function SettingPage() {
           background: rgba(255, 255, 255, 0.15);
           color: #ffffff;
         }
+
+        
+        input::placeholder {
+          color: #cbd5f5;
+        }
