@@ -22,3 +22,11 @@ export default function ReminderPage() {
     console.log(reminder);
     alert("Reminder berhasil disimpan!");
   };
+
+  return (
+    <div className="container">
+      <div className="card">
+        <h1>Reminder</h1>
+        <p className="subtitle">
+          Atur pengingat jatuh tempo langganan Anda
+        </p> 
