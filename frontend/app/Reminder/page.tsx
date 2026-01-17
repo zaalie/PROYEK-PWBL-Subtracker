@@ -43,3 +43,14 @@ export default function ReminderPage() {
               required
             />
           </div>
+
+          <div className="form-group">
+            <label>Tanggal Jatuh Tempo</label>
+            <input
+              type="date"
+              name="tanggal"
+              value={reminder.tanggal}
+              onChange={handleChange}
+              required
+            />
+          </div>
