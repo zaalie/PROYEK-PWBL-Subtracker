@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       )
     }
 
-// REGISTER //
+// REGISTER USER //
 if (action === "register") {
       if (!name) {
         return NextResponse.json(
@@ -44,7 +44,7 @@ const user = await prisma.user.create({
       return NextResponse.json({ success: true, data: user }, { status: 201 })
     }
 
-// LOGIN //
+// LOGIN USER //
 if (action === "login") {
       const user = await prisma.user.findUnique({ where: { email } })
       if (!user || !(await bcrypt.compare(password, user.password))) {

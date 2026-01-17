@@ -5,26 +5,28 @@ type Params = {
   params: { id: string }
 }
 
+// MENAMPILKAN SATU DATA SUBSCRIPTION MENURUT ID //
 export async function GET(
   _: Request,
-  { params }: Params
+  { params }: { params: { id: string } }
 ) {
+  console.log("PARAMS ID:", params.id)
+
   const id = Number(params.id)
 
   if (isNaN(id)) {
-    return apiResponse.badRequest("ID tidak valid")
+    return apiResponse.badRequest(
+      `ID tidak valid: ${params.id}`
+    )
   }
 
   const subscription = await prisma.subscription.findUnique({
     where: { id },
   })
 
-  if (!subscription) {
-    return apiResponse.notFound("Subscription tidak ditemukan")
-  }
-
   return apiResponse.ok(subscription)
 }
+
 
 // UPDATE SUBSCRIPTION //
 export async function PUT(req: Request, { params }: Params) {
