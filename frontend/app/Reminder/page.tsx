@@ -66,4 +66,10 @@ export default function ReminderPage() {
               <option value="3">H-3</option>
               <option value="7">H-7</option>
             </select>
+            
           </div>
+           <button type="submit" className="btn-submit">
+            Simpan Reminder
+          </button>
+        </form>
+      </div>
