@@ -10,4 +10,10 @@ export default function SettingPage() {
     tema: "Dark",
   });
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setSettings({ ...settings, [e.target.name]: e.target.value });
+  };
+
   
