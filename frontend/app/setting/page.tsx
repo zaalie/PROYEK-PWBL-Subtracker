@@ -107,3 +107,8 @@ export default function SettingPage() {
           border-radius: 16px;
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
         }
+
+         h1 {
+          text-align: center;
+          margin-bottom: 6px;
+        }
