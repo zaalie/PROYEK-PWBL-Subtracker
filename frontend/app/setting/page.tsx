@@ -61,27 +61,25 @@ export default function SettingPage() {
               name="notifikasi"
               value={settings.notifikasi}
               onChange={handleChange}
-            ></select>
-
-            <option value="Aktif">Aktif</option>
+            >
+              <option value="Aktif">Aktif</option>
               <option value="Nonaktif">Nonaktif</option>
             </select>
           </div>
 
-           <div className="form-group">
+          <div className="form-group">
             <label>Tema Aplikasi</label>
             <select
               name="tema"
               value={settings.tema}
               onChange={handleChange}
-            ></select>
-
-             <option value="Dark">Dark</option>
+            >
+              <option value="Dark">Dark</option>
               <option value="Light">Light</option>
             </select>
           </div>
 
-           <button type="submit" className="btn-submit">
+          <button type="submit" className="btn-submit">
             Simpan Pengaturan
           </button>
         </form>
@@ -108,7 +106,7 @@ export default function SettingPage() {
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
         }
 
-         h1 {
+        h1 {
           text-align: center;
           margin-bottom: 6px;
         }
@@ -120,7 +118,6 @@ export default function SettingPage() {
           margin-bottom: 25px;
         }
 
-        
         .form-group {
           margin-bottom: 18px;
         }
@@ -131,7 +128,7 @@ export default function SettingPage() {
           font-size: 14px;
         }
 
-         input,
+        input,
         select {
           width: 100%;
           padding: 10px 12px;
@@ -142,7 +139,6 @@ export default function SettingPage() {
           color: #ffffff;
         }
 
-        
         input::placeholder {
           color: #cbd5f5;
         }
