@@ -75,3 +75,8 @@ export default function SettingPage() {
               value={settings.tema}
               onChange={handleChange}
             ></select>
+
+             <option value="Dark">Dark</option>
+              <option value="Light">Light</option>
+            </select>
+          </div>
